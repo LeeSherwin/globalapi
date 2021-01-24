@@ -840,7 +840,7 @@ Reference data APIs provide public reference information such as system status, 
 
 This endpoint allows users to get system status, Incidents and planned maintenance.
 
-The system status can also be obtained through email, SMS, webhook, RSS/Atom feed. Users can You can click <a href='https://status.huobigroup.com/'>here</a> to subscribe. The subscription function depends on Google services. Before you subscribe, please ensure that you can access Google services normally. 
+The system status can also be obtained through email, SMS, webhook, RSS/Atom feed. Users can click <a href='https://status.huobigroup.com/'>here</a> to subscribe. The subscription function depends on Google services. Before you subscribe, please ensure that you can access Google services normally. 
 
 ```shell
 curl "https://status.huobigroup.com/api/v2/summary.json"
@@ -1010,13 +1010,13 @@ No parameter is available for this endpoint.
 |[{id        |  string                    | component id
 |name        |    string                  | component name, including Order submission, Order cancellation, Deposit etc.
 |status        |    string                  | component status, value range: operational, degraded_performance, partial_outage, major_outage, under maintenance
-|created_at        |    string                  | component create time
-|updated_at        |    string                  | component update time
+|created_at        |    string                  | component created time
+|updated_at        |    string                  | component updated time
 |.......}]        |                     | for details of other fields, please refer to the return example
 |incidents  |           | System fault incident and their status. If there is no fault at present, it will return to null
 |[{id        |       string               | incident id
 |name        |      string                | incident name
-|status        |     string                 | incident staus, value range: investigating, identified, monitoring, resolved
+|status        |     string                 | incident status, value range: investigating, identified, monitoring, resolved
 |created_at        |       string               | incident creat time
 |updated_at        |      string                | incident update time
 |.......}]        |                     | for details of other fields, please refer to the return example
@@ -1149,7 +1149,7 @@ No parameter is needed for this endpoint.
 | max-order-value            | false    | float     | Max order value of limit order and buy-market order in usdt (NEW) |
 | leverage-ratio             | true     | float     | The applicable leverage ratio (only valid for symbols eligible for isolated margin trading, cross-margin trading, or ETP trading.) |
 | underlying                 | false    | string    | Underlying ETP code (only valid for ETP symbols)             |
-| mgmt-fee-rate              | false    | float     | Position charge rate (only valid for ETP symbols)            |
+| mgmt-fee-rate              | false    | float     | Position charging rate (only valid for ETP symbols)            |
 | charge-time                | false    | string    | Position charging time (in GMT+8, in format HH:MM:SS, only valid for ETP symbols) |
 | rebal-time                 | false    | string    | Regular position rebalance time (in GMT+8, in format HH:MM:SS, only valid for ETP symbols) |
 | rebal-threshold            | false    | float     | The threshold which triggers adhoc position rebalance (evaluated by actual leverage ratio, only valid for ETP symbols) |
@@ -1159,7 +1159,7 @@ No parameter is needed for this endpoint.
 
 ## Get all Supported Currencies
 
-This endpoint returns all Huobi's supported trading currencies.
+This endpoint returns all Huobi's supported tradable currencies.
 
 ```shell
 curl "https://api.huobi.pro/v1/common/currencys"
@@ -1348,7 +1348,7 @@ No parameter is needed for this endpoint.
 
 ### Response Content
 
-The returned "Data" field contains an integer represents the timestamp in milliseconds adjusted to Singapore time.
+The returned "Data" field contains an integer representing the timestamp in milliseconds adjusted to Singapore time.
 
 # Market Data
 
